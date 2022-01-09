@@ -3,7 +3,7 @@ module.exports = ({ env }) => ({
     client: 'postgres',
     connection: {
       host: `/cloudsql/${env('INSTANCE_CONNECTION_NAME')}`,
-      database: env('DATABASE_NAME'),
+      database: env('DATABASE_NAME', 'strapi-production'),
       user: env('DATABASE_USERNAME'),
       password: env('DATABASE_PASSWORD')
     },
