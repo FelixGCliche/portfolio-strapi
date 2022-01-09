@@ -1,14 +1,12 @@
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/portfolio-337413/strapi-staging', '.']
+  args: ['build', '-t', 'gcr.io/portfolio-337413/strapi-staging:{$SHORT_SHA}', '.']
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/portfolio-337413/strapi-staging']
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'strapi-staging', '--image', 'gcr.io/portfolio-337413/strapi-staging', '--region', 'REGION']
-images:
-- gcr.io/portfolio-337413/strapi-staging
+  args: ['run', 'deploy', 'strapi-staging', '--image', 'gcr.io/$PROJECT_ID/strapi-staging:{$SHORT_SHA}', '--region', 'northamerica-northeast1 ']
 timeout: 1600s
