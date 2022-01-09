@@ -1,0 +1,13 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/portfolio-337413/strapi-staging', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/portfolio-337413/strapi-staging']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'strapi-staging', '--image', 'gcr.io/portfolio-337413/strapi-staging', '--region', 'REGION']
+images:
+- gcr.io/portfolio-337413/strapi-staging
