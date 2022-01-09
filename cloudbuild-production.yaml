@@ -11,3 +11,4 @@ steps:
   args: ['run', 'deploy', 'strapi-production', '--image', 'gcr.io/portfolio-337413/strapi-production', '--region', 'REGION']
 images:
 - gcr.io/portfolio-337413/strapi-production
+timeout: 1600s
