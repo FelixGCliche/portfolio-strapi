@@ -11,3 +11,4 @@ steps:
   args: ['run', 'deploy', 'strapi-staging', '--image', 'gcr.io/portfolio-337413/strapi-staging', '--region', 'REGION']
 images:
 - gcr.io/portfolio-337413/strapi-staging
+timeout: 1600s
