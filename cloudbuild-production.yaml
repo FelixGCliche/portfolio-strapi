@@ -8,7 +8,5 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'strapi-production', '--image', 'gcr.io/portfolio-337413/strapi-production', '--region', 'REGION']
-images:
-- gcr.io/portfolio-337413/strapi-production
+  args: ['run', 'deploy', 'strapi-production', '--image', 'gcr.io/$PROJECT_ID/strapi-production', '--region', 'northamerica-northeast1 ']
 timeout: 1600s
