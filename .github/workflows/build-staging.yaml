@@ -12,13 +12,8 @@ jobs:
 
     steps:
 
-    # Checkout from repository
-    - name: Checkout
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
     # Build and push image to Google Container Registry
-    - name: Build
-      run: |-
-        gcloud builds submit \
-          --quiet \
-          --tag "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA"
+      - name: Build docker image
+        run: docker build -t gcr.io/portfolio-337413/strapi-staging .
