@@ -7,6 +7,14 @@ env:
   SERVICE_NAME: helloworld-nodejs
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # Checkout from repository
+    - name: Checkout
+      uses: actions/checkout@v2
 
     # Build and push image to Google Container Registry
     - name: Build
