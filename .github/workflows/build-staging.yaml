@@ -1,0 +1,6 @@
+name: Strapi Build CI
+on:
+  pull_request:
+
+jobs:
+  build:
