@@ -1,4 +1,4 @@
-teps:
+steps:
 
 # Build the container image
 - id: 'Build'
