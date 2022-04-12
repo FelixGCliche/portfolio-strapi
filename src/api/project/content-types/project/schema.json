@@ -4,7 +4,8 @@
   "info": {
     "singularName": "project",
     "pluralName": "projects",
-    "displayName": "project"
+    "displayName": "project",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -32,13 +33,14 @@
       "type": "richtext"
     },
     "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -56,10 +58,10 @@
     "url": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
-      "type": "string"
+      "type": "json"
     }
   }
 }

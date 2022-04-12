@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_label_navigation_links",
+  "info": {
+    "displayName": "Navigation Link",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "default": "/",
+      "unique": true
+    }
+  }
+}
